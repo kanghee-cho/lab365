@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'lbrxdb',
         'USER': secrets['DB_USER'],
         'PASSWORD': secrets['DB_PASSWORD'],
-        'HOST': 'DB',
+        'HOST': 'lbrxdb.postgres.database.azure.com',
         'PORT': '5432',
     }
 }
