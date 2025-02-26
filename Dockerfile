@@ -7,7 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Set default encoding to utf-8
 ENV PYTHONENCODING=utf-8
 
-COPY ./requirements.txt /tmp/requirements.txt
+COPY ./config/requirements.txt /tmp/requirements.txt
 COPY ./app /app
 
 # Working directory in container
