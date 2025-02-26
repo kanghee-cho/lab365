@@ -1,0 +1,18 @@
+# Docker로 실행하는 것아니면 system에 자동실행을 위해 이 파일이 필요함
+# /etc/systemd/system에 생성
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=<계정명>
+Group=<계정명>
+WorkingDirectory=<프로젝트 경로. 즉 manage.py가 위치한 디렉토리 pwd>
+ExecStart=<gunicorn이 설치된 가상환경 위치> \
+        --workers 3 \
+        --bind unix:/home/foo/django_test/run/gunicorn.sock \
+        <wsgi.py가 있는 디렉토리 이름>.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
